@@ -20,5 +20,16 @@ public class UserResource {
 
     @ResponseStatus(HttpStatus.CREATED)
     @PostMapping
-    public  User registerUser(@RequestBody User user) { return userRepository.save(user); }
+    public User registerUser(@RequestBody User user) { return userRepository.save(user); }
+
+    @DeleteMapping("{id}")
+    public void deleteUser(@PathVariable int id) {
+        userRepository.deleteById(id);
+    }
+
+    @PutMapping("{id}")
+    public User UpdateUser(@RequestBody User user, @PathVariable int id) {
+        user.getId();
+        return userRepository.save(user);
+    }
 }

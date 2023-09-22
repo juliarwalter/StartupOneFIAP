@@ -20,7 +20,7 @@ public class User {
     private String name;
 
     @Column(name = "nm_sobrenome", nullable = true, length = 100)
-    private String lastname;
+    private String lastName;
 
     @Column(name = "nm_email", nullable = true, length = 100)
     private String email;
@@ -33,9 +33,9 @@ public class User {
     @CreationTimestamp
     private Calendar registrationDate;
 
-    @Column(name = "dt_ultimoAcesso")
+    @Column(name = "dt_ultimoAccess")
     @CreationTimestamp
-    private Calendar lastRegstration;
+    private Calendar lastAccess;
 
     public int getId() {
         return id;
@@ -52,10 +52,10 @@ public class User {
     public void setName(String name) { this.name = name; }
 
     public String getLastName() {
-        return name;
+        return lastName;
     }
 
-    public void setLastName(String lastname) { this.lastname = lastname; }
+    public void setLastName(String lastName) { this.lastName = lastName; }
 
     public String getEmail() {
         return email;
@@ -71,12 +71,20 @@ public class User {
         this.registrationDate = registrationDate;
     }
 
-    public Calendar getLastRegistration() {
-        return lastRegstration;
+    public Calendar getLastAccess() {
+        return lastAccess;
     }
 
-    public void setLastRegistration(Calendar lastRegistration) {
-        this.lastRegstration = lastRegstration;
+    public void setLastAccess(Calendar lastRegistration) {
+        this.lastAccess = lastAccess;
+    }
+
+    public Calendar getBirthday() {
+        return birthday;
+    }
+
+    public void setBirthday(Calendar birthday) {
+        this.birthday = birthday;
     }
 
 }
