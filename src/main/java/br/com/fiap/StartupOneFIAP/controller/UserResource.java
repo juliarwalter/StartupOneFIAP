@@ -29,7 +29,7 @@ public class UserResource {
 
     @PutMapping("{id}")
     public User UpdateUser(@RequestBody User user, @PathVariable int id) {
-        user.getId();
+        user.setId(id);
         return userRepository.save(user);
     }
 }
