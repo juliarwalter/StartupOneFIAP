@@ -1,7 +1,7 @@
 package br.com.fiap.StartupOneFIAP.model;
 
 import jakarta.persistence.*;
-import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
 import org.hibernate.annotations.CreationTimestamp;
 
 import java.util.Calendar;
@@ -14,8 +14,11 @@ public class Review {
     @Column(name = "id_avaliacao")
     private int id;
 
+    @Column(name = "id_usuario")
+    private int idUsuario;
+
     @Column(name = "nr_estrelas", nullable = true, length = 100)
-    @NotBlank(message = "Número de estrelas é obrigatório")
+    @NotNull(message = "Número de estrelas é obrigatório")
     private int stars;
 
     @Column(name = "tx_comentario", nullable = true, length = 100)
@@ -55,5 +58,13 @@ public class Review {
 
     public void setReviewDate(Calendar reviewDate) {
         this.reviewDate = reviewDate;
+    }
+
+    public int getIdUsuario() {
+        return idUsuario;
+    }
+
+    public void setIdUsuario(int idUsuario) {
+        this.idUsuario = idUsuario;
     }
 }
