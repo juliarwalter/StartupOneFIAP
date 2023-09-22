@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.List;
 
 @RestController
-@RequestMapping("ususario")
+@RequestMapping("usuario")
 public class UserResource {
 
     @Autowired
