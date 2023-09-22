@@ -13,7 +13,7 @@ public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "usuario")
     @Column(name = "id_usuario")
-    private int id;
+    private int idUser;
 
     @Column(name = "nm_usuario", nullable = true, length = 100)
     @NotBlank(message = "Nome é um campo obrigatório")
@@ -37,12 +37,12 @@ public class User {
     @CreationTimestamp
     private Calendar lastAccess;
 
-    public int getId() {
-        return id;
+    public int getIdUser() {
+        return idUser;
     }
 
-    public void setId(int id) {
-        this.id = id;
+    public void setIdUser(int idUser) {
+        this.idUser = idUser;
     }
 
     public String getName() {

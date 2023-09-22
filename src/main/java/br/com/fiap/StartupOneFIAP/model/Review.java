@@ -12,7 +12,7 @@ public class Review {
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "avaliacao")
     @Column(name = "id_avaliacao")
-    private int id;
+    private int idReview;
 
     @Column(name = "id_usuario")
     private int idUsuario;
@@ -28,12 +28,12 @@ public class Review {
     @CreationTimestamp
     private Calendar reviewDate;
 
-    public int getId() {
-        return id;
+    public int getIdReview() {
+        return idReview;
     }
 
-    public void setId(int id) {
-        this.id = id;
+    public void setIdReview(int idReview) {
+        this.idReview = idReview;
     }
 
     public int getStars() {

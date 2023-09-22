@@ -23,14 +23,14 @@ public class ReviewResource {
     public Review registerReview(@RequestBody Review review) {
         return reviewRepository.save(review);
     }
-    @DeleteMapping("{id}")
-    public void deleteReview(@PathVariable int id) {
-        reviewRepository.deleteById(id);
+    @DeleteMapping("{idReview}")
+    public void deleteReview(@PathVariable int idReview) {
+        reviewRepository.deleteById(idReview);
     }
 
-    @PutMapping("{id}")
-    public Review UpdateReview(@RequestBody Review review, @PathVariable int id) {
-        review.setId(id);
+    @PutMapping("{idReview}")
+    public Review UpdateReview(@RequestBody Review review, @PathVariable int idReview) {
+        review.setIdReview(idReview);
         return reviewRepository.save(review);
     }
 }

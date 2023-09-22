@@ -22,14 +22,14 @@ public class UserResource {
     @PostMapping
     public User registerUser(@RequestBody User user) { return userRepository.save(user); }
 
-    @DeleteMapping("{id}")
-    public void deleteUser(@PathVariable int id) {
-        userRepository.deleteById(id);
+    @DeleteMapping("{idUser}")
+    public void deleteUser(@PathVariable int idUser) {
+        userRepository.deleteById(idUser);
     }
 
-    @PutMapping("{id}")
-    public User UpdateUser(@RequestBody User user, @PathVariable int id) {
-        user.setId(id);
+    @PutMapping("{idUser}")
+    public User UpdateUser(@RequestBody User user, @PathVariable int idUser) {
+        user.setIdUser(idUser);
         return userRepository.save(user);
     }
 }
